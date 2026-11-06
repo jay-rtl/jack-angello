@@ -2,7 +2,7 @@ const {chromium}=require('playwright');
 const fs=require('fs');
 const path=require('path');
 const BASE='http://127.0.0.1:8765/jack-angello/';
-const routes=['','books/','art/','events/','artist/','author/','contact/','books/cashing-in-on-racial-color/','art/trunk-bay/'];
+const routes=['','books/','art/','events/','artist/','author/','contact/','media/','books/cashing-in-on-racial-color/','books/minorities-inc/','books/black-power-white-cower-inc/','books/virgins-and-villains/','art/trunk-bay/','art/evening-sail/','art/st-john-overlook/','art/the-fisherman/','art/cinnamon-bay/','404.html'];
 const widths=[1440,1024,768,390,375];
 const errors=[];const broken=new Set();fs.mkdirSync('screenshots',{recursive:true});
 (async()=>{
@@ -29,7 +29,7 @@ const errors=[];const broken=new Set();fs.mkdirSync('screenshots',{recursive:tru
       if(result.complete&&result.natural===0)errors.push(route+' '+width+' broken image '+img.url);
     }
     if(width===1440)for(const l of data.links)broken.add(l);
-    if(width===1440||width===390){let label=route.replaceAll('/','-')||'home';await page.screenshot({path:'screenshots/'+label+'-'+width+'.png',fullPage:true});}
+    if((width===1440||width===390)&&['','books/','art/','events/','artist/','author/','contact/','books/cashing-in-on-racial-color/','art/trunk-bay/'].includes(route)){let label=route.replaceAll('/','-')||'home';await page.screenshot({path:'screenshots/'+label+'-'+width+'.png',fullPage:true});}
     if(width===390&&['','books/','art/','contact/'].includes(route)){
       const toggle=page.locator('.nav-toggle');
       if(await toggle.isVisible()){
