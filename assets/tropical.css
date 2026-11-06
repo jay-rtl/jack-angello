@@ -179,3 +179,16 @@ html{background:#75535d}
 @keyframes island-glass-enter{from{opacity:0;transform:translateY(-9px)}to{opacity:1;transform:translateY(0)}}
 .site-header{animation:island-glass-enter .5s both}
 @media(prefers-reduced-motion:reduce){.site-header{animation:none!important}}
+
+/* Fine Art gallery: enforce readable foreground against dark sunset glass. */
+body.tropical-inner .gallery-opening{color:#fff4e9}
+body.tropical-inner .gallery-opening p.gallery-lead{
+  color:#fff4e9 !important;
+  opacity:1 !important;
+  text-shadow:0 2px 12px rgba(20,12,20,.8);
+}
+body.tropical-inner .gallery-opening .eyebrow{
+  color:#ffd5ad !important;
+  opacity:1 !important;
+}
+body.tropical-inner .gallery-opening .gallery-vertical{color:#f7dccc}
