@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - .github/workflows/repair-cashing-cover.yml
+      - .github/scripts/repair-cashing-cover.py
   workflow_dispatch:
 permissions:
   contents: write
