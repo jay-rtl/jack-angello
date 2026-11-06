@@ -50,6 +50,13 @@ const errors=[];const broken=new Set();fs.mkdirSync('screenshots',{recursive:tru
   const bg=await request.get(BASE+'assets/tropical-sunset.webp');if(bg.status()!==200)errors.push('Background asset HTTP '+bg.status());
   const home=await ctx.newPage();await home.goto(BASE);if(await home.locator('.home-book img').count()!==3)errors.push('Home featured book covers != 3');
   const books=await ctx.newPage();await books.goto(BASE+'books/');if(await books.locator('.books-feature-cover img').count()!==3)errors.push('Books featured covers != 3');
+  for(const slug of ['black-power-white-cower-inc','minorities-inc','cashing-in-on-racial-color']){
+    const image=home.locator('img[src$="'+slug+'.webp"]').first();
+    if(await image.count()){
+      const res=await image.evaluate(el=>({w:el.naturalWidth,h:el.naturalHeight}));
+      if(res.w<540||res.h<700)errors.push('Cover too small '+slug+' '+res.w+'x'+res.h);
+    }
+  }
   await books.locator('#catalog-search').fill('9781961227071');if(await books.locator('[data-book-row]:visible').count()!==1)errors.push('ISBN search failed');
   await ctx.close();
   console.log('AUDIT_RESULT',JSON.stringify({widths,routes:routes.length,links:broken.size,errors},null,2));
