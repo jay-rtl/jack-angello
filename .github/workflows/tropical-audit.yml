@@ -8,6 +8,7 @@ on:
       - assets/tropical.css
       - assets/books-tropical.css
       - assets/site.js
+      - assets/*.webp
       - index.html
       - books/index.html
   workflow_dispatch:
