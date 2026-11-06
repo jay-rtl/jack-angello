@@ -1,0 +1,46 @@
+
+/* Books-specific composition matches the tropical Featured Books reference. */
+.books-scene{max-width:1810px;min-height:calc(100svh - 30px);margin:0 auto;padding:34px var(--pad) 68px;display:flex;flex-direction:column;gap:17px}
+.books-lede{color:#fff6ef;padding:10px 3.6vw 0;max-width:890px;text-shadow:0 3px 13px #29151b99}
+.books-lede h1{font:400 clamp(47px,5.3vw,92px)/1.1 'Libre Baskerville',Georgia,serif;letter-spacing:-.045em;margin:0 0 9px}
+.books-lede p{font:italic clamp(16px,1.4vw,24px)/1.35 Georgia,serif;color:#fff5ec;max-width:740px;margin:0 0 16px}
+.books-lede .home-actions{margin-top:15px}
+.books-feature{padding:31px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.books-feature-entry{display:grid;grid-template-columns:minmax(100px,47%) minmax(0,1fr);align-items:center;gap:22px;text-decoration:none;padding:7px 25px;border-right:1px solid #fff8;min-width:0;color:#251b1d}
+.books-feature-entry:last-child{border-right:0}
+.books-feature-cover{display:flex;align-items:center;justify-content:center;min-width:0}
+.books-feature-cover img{display:block;width:auto;max-width:100%;height:clamp(205px,21.5vw,340px);object-fit:contain;box-shadow:5px 8px 13px #2a1c274a;transition:transform .3s ease}
+.books-feature-entry:hover img{transform:translateY(-7px)}
+.books-feature-entry h2{font:400 clamp(18px,1.55vw,28px)/1.15 Georgia,serif;margin:0 0 11px;overflow-wrap:anywhere}
+.books-feature-entry .byline{font:italic 14px/1.5 Georgia,serif;margin:0 0 17px;color:#4a2f32}
+.books-feature-entry .description{font:13px/1.55 'DM Sans',sans-serif;margin:0 0 16px;color:#312329}
+.books-feature-entry .subtle{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6c3d31;margin-bottom:11px}
+.book-link-pill{display:inline-flex;align-items:center;gap:12px;font:14px Georgia,serif;color:#341d1c;border:1px solid #a7684c;border-radius:99px;padding:10px 14px}
+.books-feature-entry:hover .book-link-pill{background:#fff1dfb3}
+.books-secondary{padding:26px 33px;display:grid;grid-template-columns:300px 1fr;align-items:center;gap:22px}
+.books-secondary-heading .meta{color:#ffcd93}
+.books-secondary-heading h2{font:400 clamp(24px,2.4vw,41px)/1.17 'Libre Baskerville',Georgia,serif;color:#fff7ed;margin:9px 0 12px;text-shadow:0 2px 7px #24152277}
+.books-secondary-heading p{color:#fff3e7;font:13px/1.55 'DM Sans',sans-serif}
+.books-secondary-heading .underlink{color:#fff1e5}
+.books-mini-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.books-mini{display:grid;grid-template-columns:70px 1fr;gap:11px;align-items:center;text-decoration:none;min-width:0;padding:10px 12px;background:#ffebd83b;border:1px solid #fff8;border-radius:14px}
+.books-mini img{width:70px;height:105px;object-fit:contain}
+.books-mini strong{font:400 15px/1.2 Georgia,serif;color:#231819;display:block}
+.books-mini span{font:11px/1.4 'DM Sans',sans-serif;color:#412d2c}
+.books-mini:hover{background:#fff5e785}
+.books-index{padding:32px;display:grid;grid-template-columns:1fr 2fr;gap:30px;align-items:start}
+.books-index-intro h2{font:400 clamp(26px,3vw,46px)/1.1 'Libre Baskerville',Georgia,serif;color:#fff6ec;margin:10px 0}
+.books-index-intro p{font-size:13px;color:#fff5e9;line-height:1.65;max-width:430px}
+.books-search-tools{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-bottom:16px}
+.books-search-tools input,.books-search-tools select{background:#fff5e4d9;border:1px solid #fff9;border-radius:8px;padding:12px 13px;min-width:0;color:#302121;font-size:13px}
+.books-index-results{display:grid;gap:8px}
+.edition-row{background:#ffefe0a8;border:1px solid #fff8;border-radius:9px;padding:12px 14px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.edition-row a{font-weight:600;font-size:13px;line-height:1.35;text-decoration:none;color:#281b1f}
+.edition-row a:hover{text-decoration:underline}
+.edition-row .edition-meta{font:11px/1.4 'DM Sans',sans-serif;color:#695046;text-align:right;white-space:nowrap}
+.books-empty{padding:24px;background:#fff3e9bb;border-radius:8px;color:#4b3636;font-size:13px}
+.books-footnote{color:#fff4e8;max-width:100%;font-size:11px;text-shadow:0 1px 8px #27141a;margin:6px 14px}
+@media(max-width:1340px){.books-feature{padding:23px}.books-feature-entry{gap:14px;padding:5px 15px}.books-feature-cover img{height:clamp(190px,21vw,295px)}.books-feature-entry h2{font-size:20px}.books-feature-entry .description{font-size:12px}.books-secondary{grid-template-columns:250px 1fr}}
+@media(max-width:1050px){.books-feature{grid-template-columns:1fr 1fr;gap:15px}.books-feature-entry{border-right:0;border-bottom:1px solid #fff8;padding:12px}.books-feature-entry:last-child{grid-column:1/-1;grid-template-columns:185px 1fr;max-width:560px}.books-feature-cover img{height:265px}.books-secondary{grid-template-columns:1fr}.books-mini-list{gap:10px}.books-index{grid-template-columns:1fr}}
+@media(max-width:700px){.books-scene{padding:30px 18px 50px}.books-lede{padding:13px 8px}.books-lede h1{font-size:clamp(38px,9vw,62px)}.books-feature{grid-template-columns:1fr;padding:14px;gap:2px}.books-feature-entry,.books-feature-entry:last-child{grid-column:auto;display:grid;grid-template-columns:35% minmax(0,1fr);padding:17px 8px;border-bottom:1px solid #fff9;max-width:none}.books-feature-entry:last-child{border-bottom:0}.books-feature-cover img{height:clamp(175px,42vw,270px)}.books-feature-entry h2{font-size:clamp(17px,4.5vw,23px)}.books-feature-entry .description{font-size:12px}.books-secondary{padding:20px}.books-mini-list{grid-template-columns:1fr}.books-mini{grid-template-columns:67px 1fr}.books-mini img{height:87px}.books-index{padding:20px}.books-search-tools{grid-template-columns:1fr 1fr}.books-search-tools input{grid-column:1/-1}.edition-row{align-items:start;flex-direction:column}.edition-row .edition-meta{text-align:left;white-space:normal}}
+@media(prefers-reduced-motion:reduce){.books-feature-entry img{transition:none!important}}
