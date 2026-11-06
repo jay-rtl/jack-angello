@@ -6,7 +6,7 @@ const routes=['','books/','art/','events/','artist/','author/','contact/','books
 const widths=[1440,1024,768,390,375];
 const errors=[];const broken=new Set();fs.mkdirSync('screenshots',{recursive:true});
 (async()=>{
- const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+ const browser=await chromium.launch({headless:true,executablePath:process.env.BROWSER_EXECUTABLE||undefined,args:['--no-sandbox']});
  try{
   for(const width of widths){
    const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',deviceScaleFactor:1});
