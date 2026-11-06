@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - .github/workflows/restore-covers.yml
+      - .github/scripts/restore_cover_quality.py
   workflow_dispatch:
 permissions:
   contents: write
