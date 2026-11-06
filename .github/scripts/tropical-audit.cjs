@@ -35,6 +35,12 @@ const errors=[];const broken=new Set();fs.mkdirSync('screenshots',{recursive:tru
       if(await toggle.isVisible()){
        await toggle.click();
        if(await toggle.getAttribute('aria-expanded')!=='true')errors.push(route+' mobile menu did not open');
+       await page.evaluate(()=>window.scrollTo(0,Math.min(500,document.documentElement.scrollHeight-innerHeight)));
+       await page.waitForTimeout(160);
+       const stickyOpen=await page.locator('.site-header').evaluate(x=>({top:x.getBoundingClientRect().top,position:getComputedStyle(x).position}));
+       if(stickyOpen.position!=='fixed'||Math.abs(stickyOpen.top-8)>3)errors.push(route+' header moves while mobile menu open: '+JSON.stringify(stickyOpen));
+       if(!await page.locator('#nav').isVisible())errors.push(route+' opened navigation not visible after scrolling');
+       await page.evaluate(()=>window.scrollTo(0,0));
        await toggle.click();
        if(await toggle.getAttribute('aria-expanded')!=='false')errors.push(route+' mobile menu did not close');
       }
