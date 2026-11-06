@@ -154,3 +154,22 @@ body:not(.home-page) .shell.section{margin:0 14px 30px;padding:26px}
 /* Explicit layering and filter behavior across browsers */
 body{isolation:isolate;background:transparent}
 [hidden]{display:none!important}
+
+/* Visual QA contrast corrections against the real sunset photograph */
+html{background:#75535d}
+.glass-panel{background:rgba(255,231,211,.64);border-color:rgba(255,255,255,.75);box-shadow:0 14px 32px #2915233d,inset 0 1px 0 #ffffff9a}
+.home-books-intro h2,.home-books-intro .meta,.home-books-intro .underlink,
+.books-secondary-heading h2,.books-secondary-heading .meta,.books-secondary-heading p,.books-secondary-heading .underlink,
+.books-index-intro h2,.books-index-intro .meta,.books-index-intro p,
+.home-bottom h2,.home-bottom p{color:#38262a!important;text-shadow:none}
+.home-books-intro .meta,.books-secondary-heading .meta,.books-index-intro .meta{color:#8d4939!important}
+.home-teaser{background:rgba(255,237,221,.81)}
+.home-bottom{background:rgba(255,236,218,.84)}
+.home-bottom h2{color:#38262a!important}
+.home-bottom p{color:#5d3c36!important}
+.books-footnote{color:#fff2e3;text-shadow:0 2px 6px #31212b}
+.books-index-results .edition-meta{color:#64463e}
+.books-feature-entry .byline{color:#482e30}
+.books-feature-entry .subtle{color:#7a3b32}
+.books-feature-entry .description{color:#3c2a2b}
+@media(max-width:780px){body:after{background:linear-gradient(180deg,rgba(28,19,28,.49),rgba(51,30,38,.15) 46%,rgba(62,37,39,.23))}}
