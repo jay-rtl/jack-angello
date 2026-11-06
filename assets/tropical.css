@@ -192,3 +192,37 @@ body.tropical-inner .gallery-opening .eyebrow{
   opacity:1 !important;
 }
 body.tropical-inner .gallery-opening .gallery-vertical{color:#f7dccc}
+
+/* Mobile navigation: fixed to the viewport, independent of page scroll.
+   Avoid overflow:hidden on body because it breaks sticky behavior. */
+@media(max-width:780px){
+  html{scroll-padding-top:92px}
+  body{padding-top:82px}
+  body.menu-open{overflow-x:clip;overflow-y:visible}
+  .site-header,.site-header.scrolled{
+    position:fixed;
+    top:8px;
+    left:14px;
+    right:14px;
+    width:auto;
+    max-width:none;
+    margin:0;
+    height:64px;
+    z-index:1000;
+  }
+  .site-nav{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+    max-height:calc(100dvh - 95px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    z-index:1001;
+  }
+  .site-header:has(.site-nav.open){background:rgba(61,40,47,.96)}
+}
+@media(max-width:480px){
+  .site-header,.site-header.scrolled{height:61px}
+}
