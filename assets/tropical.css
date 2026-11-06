@@ -150,3 +150,7 @@ body:not(.home-page) .shell.section{margin:0 14px 30px;padding:26px}
 .glass-panel{background:rgba(244,218,201,.89)}.site-header{background:rgba(60,40,48,.97)}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Explicit layering and filter behavior across browsers */
+body{isolation:isolate;background:transparent}
+[hidden]{display:none!important}
