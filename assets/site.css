@@ -27,3 +27,21 @@
 @media(max-width:780px){.site-header{height:70px}.site-nav{display:none;position:absolute;left:0;right:0;top:70px;padding:25px;background:var(--paper);border-bottom:1px solid #111;flex-direction:column;align-items:flex-start;gap:20px}.site-nav.open{display:flex}.site-nav a{font-size:15px}.nav-toggle{display:block}.twin-intro{grid-template-columns:1fr}.twin-type{padding:50px var(--pad)}.twin-type h1{margin:65px 0 50px}.twin-image{height:500px}.index-strap{grid-template-columns:1fr}.feature-split,.feature-split.reverse{grid-template-columns:1fr}.feature-split.reverse>*:first-child{order:0}.feature-copy{padding:65px var(--pad)}.feature-img{min-height:0;padding:35px}.feature-img img{height:460px}.gallery-feature{grid-template-columns:1fr}.gallery-feature img{height:440px}.gallery-feature aside{gap:30px}.gallery-grid{gap:48px 20px}.gallery-item,.gallery-item:nth-child(3n+2),.gallery-item:nth-child(3n){grid-column:span 6;margin:0}.gallery-opening h1{margin-top:75px}.profile-opening{grid-template-columns:1fr;min-height:0}.detail-page{grid-template-columns:1fr}.contact-layout{grid-template-columns:1fr}.art-row{grid-template-columns:55px 1fr 22px}.art-row-visual{grid-column:2;grid-row:2}.art-row-title{grid-column:2;grid-row:1}.art-row-number{grid-row:1/3}.art-row>:last-child{grid-column:3;grid-row:1/3}.ledger-row{grid-template-columns:55px 1fr}.ledger-row .status{grid-column:2}.closing{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.wordmark strong{font-size:15px}.display{font-size:clamp(76px,19vw,145px)}.masthead h1{font-size:clamp(82px,18vw,155px);margin:60px 0 30px}.twin-type h1{font-size:clamp(80px,18vw,145px)}.twin-image{height:360px;padding:25px}.feature-img img{height:360px}.gallery-opening h1{font-size:clamp(90px,20vw,160px)}.gallery-opening .gallery-vertical{display:none}.gallery-feature img{height:270px}.gallery-grid{grid-template-columns:1fr;row-gap:50px}.gallery-item,.gallery-item:nth-child(3n+2),.gallery-item:nth-child(3n){grid-column:1/-1}.art-row{gap:12px;min-height:135px}.art-row-title{font-size:clamp(39px,10vw,70px)}.art-row-visual img{width:85px;height:55px}.detail-page{padding-top:35px}.profile-opening{padding-top:55px;padding-bottom:80px}.profile-opening h1{font-size:clamp(75px,18vw,140px)}.ledger-row h2{font-size:clamp(33px,9vw,70px)}.colophon{grid-template-columns:1fr}.colophon-links{justify-content:start}.colophon small{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Cover showcase: editorial shelf with all three supplied book covers. */
+.cover-library{background:var(--paper)}
+.cover-library-heading{display:flex;align-items:end;justify-content:space-between;gap:45px;margin-bottom:48px}
+.cover-library-heading h2{font-size:clamp(60px,7.3vw,135px);line-height:.82;margin:23px 0 0;letter-spacing:-.06em}
+.cover-library-heading h2 em{color:var(--red);font-weight:400}
+.cover-library-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,3vw,50px)}
+.cover-library-item{text-decoration:none;min-width:0}
+.cover-library-art{background:#dbd4c9;padding:clamp(20px,3.5vw,55px);display:flex;align-items:center;justify-content:center;min-height:410px}
+.cover-library-item:nth-child(2) .cover-library-art{background:#d0c7bb}
+.cover-library-item:nth-child(3) .cover-library-art{background:#d9d2ca}
+.cover-library-art img{height:clamp(270px,35vw,505px);width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(15px 19px 12px #1114);transition:transform .35s ease}
+.cover-library-item:hover .cover-library-art img{transform:translateY(-7px)}
+.cover-library-item .meta{display:block;color:var(--red);padding-top:22px}
+.cover-library-item h3{font-size:clamp(29px,3vw,55px);line-height:1.02;margin:13px 0 0}
+@media(max-width:780px){.cover-library-heading{align-items:start;flex-direction:column}.cover-library-grid{gap:17px}.cover-library-art{padding:17px;min-height:280px}.cover-library-art img{height:clamp(180px,28vw,300px)}}
+@media(max-width:560px){.cover-library-grid{grid-template-columns:1fr;gap:44px}.cover-library-art{min-height:0;padding:35px}.cover-library-art img{height:390px}.cover-library-heading h2{font-size:clamp(60px,13vw,90px)}}
+@media(prefers-reduced-motion:reduce){.cover-library-art img{transition:none!important}}
