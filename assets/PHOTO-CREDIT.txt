@@ -1,0 +1,6 @@
+Island Asylum tropical sunset background
+Source: https://unsplash.com/photos/seashore-during-golden-hour-yIpU0HMpN0I
+Photographer: Yegor Denisov
+Source file: https://images.unsplash.com/photo-1571043281665-9debfed10719
+License: Unsplash License https://unsplash.com/license
+The original photo is used as a background. Website interface, typography and covers are independent HTML/CSS elements.
