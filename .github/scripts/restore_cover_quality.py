@@ -46,6 +46,18 @@ def candidates(isbn):
       f'https://covers.openlibrary.org/b/isbn/{isbn}-L.jpg?default=false',
     ]
     if i10: urls.append(f'https://covers4.booksamillion.com/covers/bam/{i10[0]}/{i10[1:3]}/{i10[3:6]}/{i10}_b.jpg')
+    if isbn=='9781970617955':
+        for alt in ['9781970617962','9781970617979']:
+            urls.extend([
+              f'https://images-us.bookshop.org/ingram/{alt}.jpg?height=1400',
+              f'https://prodimage.images-bn.com/pimages/{alt}_p0_v1_s1500x1500.jpg',
+              f'https://covers.openlibrary.org/b/isbn/{alt}-L.jpg?default=false',
+            ])
+        # ISBN-specific public ebook cover endpoints
+        urls.extend([
+          'https://books.google.com/books/content?vid=ISBN9781970617962&printsec=frontcover&img=1&zoom=3',
+          'https://books.google.com/books/content?vid=ISBN9781970617955&printsec=frontcover&img=1&zoom=3',
+        ])
     return urls
 
 def main():
