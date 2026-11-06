@@ -1,0 +1,51 @@
+name: Install licensed tropical photography
+on:
+  push:
+    paths:
+      - .github/workflows/install-sunset-photo.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Retrieve and optimize licensed photo
+        run: |
+          python -m pip install --quiet pillow requests
+          python - <<'PY'
+          from PIL import Image, ImageOps
+          from io import BytesIO
+          import requests
+          from pathlib import Path
+          url='https://images.unsplash.com/photo-1571043281665-9debfed10719?auto=format&fit=crop&w=2200&q=86'
+          res=requests.get(url,timeout=45,headers={'User-Agent':'IslandAsylumSite/1.0'})
+          res.raise_for_status()
+          img=Image.open(BytesIO(res.content)).convert('RGB')
+          if img.width < 1200: raise RuntimeError('Background photo is too small')
+          img.thumbnail((2200,1600),Image.Resampling.LANCZOS)
+          path=Path('assets/tropical-sunset.webp')
+          img.save(path,'WEBP',quality=83,method=6)
+          print('Saved',path,'dimensions',img.size,'bytes',path.stat().st_size)
+          PY
+      - name: Credit licensed photo
+        run: |
+          cat > assets/PHOTO-CREDIT.txt <<'EOF'
+          Island Asylum tropical sunset background
+          Source: https://unsplash.com/photos/seashore-during-golden-hour-yIpU0HMpN0I
+          Photographer: Yegor Denisov
+          Source file: https://images.unsplash.com/photo-1571043281665-9debfed10719
+          License: Unsplash License https://unsplash.com/license
+          The original photo is used as a background. Website interface, typography and covers are independent HTML/CSS elements.
+          EOF
+      - name: Commit photograph
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/tropical-sunset.webp assets/PHOTO-CREDIT.txt
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Add licensed original tropical sunset photo"
+          git push
